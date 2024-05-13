@@ -1,4 +1,4 @@
-# Development styleguide
+# Development Style Guide
 
 The document describes basic principles and style guides to follow during the development of ML-related projects. This style guide should be applied to all code, which may eventually become part of a production system or potentially developed in collaboration.
 
@@ -31,13 +31,13 @@ Good quality and uniform code style enhances code readability and maintainabilit
 
 * It is a good practice to cover the production code by autotests, e.g., using [pytest](https://pypi.org/project/pytest/).
 
-* Imports sorting could be done automatically with [isort](https://pypi.org/project/isort/) using the following parameters: `--atomic -l=79 -m=HANGING_INDENT --ls`. The template is [configured](README.md#pre-commit-hooks) to use isort as pre-commit.
+* Imports sorting could be done automatically with [isort](https://pypi.org/project/isort/) using the following parameters: `--atomic -l=79 -m=HANGING_INDENT --ls`. The template is [configured](README.md#pre-commit-hooks) to use isort as a pre-commit hook.
 
 * Use four whitespace characters for indentation in Python code. Two whitespace characters can be used for indentation in YAML and JSON files.
 
 ## Git
 
-* Use a simplified [Gitflow Workflow:](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow): the `develop` branch can be named `dev`. When working collaboratively, implement individual features or experiment series in separate feature branches. If these feature branches prove successful the feature developer merges them into `dev`. Update the `master` branch wisely to provide tested and reliable production-ready code. In many cases, a merge or commit to master effectively marks a new version release.
+* Use a simplified [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow): the `develop` branch can be named `dev`. When working collaboratively, implement individual features or experiment series in separate feature branches. If these feature branches prove successful the feature developer merges them into `dev`. Update the `master` branch wisely to provide tested and reliable production-ready code. In many cases, a merge or commit to master effectively marks a new version release.
 
 * Each commit must be accompanied by a meaningful commit message following the Udacity commit message [styleguide](http://udacity.github.io/git-styleguide/).
 
