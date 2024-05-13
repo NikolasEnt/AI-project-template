@@ -14,6 +14,7 @@ The template includes:
 * `data` - Data, including datasets for training and saved models. In the majority of cases, the content of the folder should not be tracked by git
 * `src` - The project source code
 * `scripts` - Small standalone scripts
+* `configs` - Configuration files: yaml, json, toml, and etc.
 * `tests` - Unit tests
 * `docs` - Documentation
 * `notebooks` - Jupyter notebooks for data exploration and visualisation
