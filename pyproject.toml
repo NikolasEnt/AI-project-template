@@ -25,7 +25,6 @@ convention = "google"
 [tool.ruff.format]
 quote-style = "single"
 
-
 [tool.isort]
 length_sort = true
 multi_line_output = 2  # Hanging indent
