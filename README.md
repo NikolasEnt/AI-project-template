@@ -71,7 +71,7 @@ This allows use of the Linux host X11 server to access the display. Note that ot
 
 ## Pre-commit hooks
 
-The project provides some basic pre-commit hooks, helping with code formatting and linting before committing. It is just a helper, but even without this feature, it is important to ensure that the final code is formatted correctly, follows PEP8, and adheres to the development [Style Guide](GUIDE.md).
+The project provides some basic pre-commit hooks, helping with code linting before committing. It is just a helper, but even without this feature, it is important to ensure that the final code is formatted correctly, follows PEP8, and adheres to the development [Style Guide](GUIDE.md).
 
 To install pre-commit hooks, run in the project home directory:
 ```bash
@@ -81,6 +81,9 @@ pre-commit install-hooks
 ```
 
 The pre-commit hooks are defined in [.pre-commit-config.yaml](.pre-commit-config.yaml) and configured in [pyproject.toml](pyproject.toml). Feel free to customize them as needed.
+
+The defualt provided hooks include isort for sorting imports and Ruff for linting. If preferred, other hooks can be installed. If desired, [Ruff Formatter](https://docs.astral.sh/ruff/formatter/) can be enabled by uncommeting the corresponding block in the `.pre-commit-config.yaml` file.
+
 
 ## Links
 

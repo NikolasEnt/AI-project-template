@@ -21,5 +21,6 @@ repos:
     -   id: ruff
         types_or: [ python, pyi, jupyter ]
         args: [ --fix ]
-    -   id: ruff-format
-        types_or: [ python, pyi, jupyter ]
+    # Incomment to enable the formatter
+    # -   id: ruff-format
+    #     types_or: [ python, pyi, jupyter ]
