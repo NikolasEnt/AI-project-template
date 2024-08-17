@@ -11,13 +11,26 @@ The template includes:
 
 ## Project structure
 
-* `data` - Data, including datasets for training and saved models. In the majority of cases, the content of the folder should not be tracked by git
-* `src` - The project source code
-* `scripts` - Small standalone scripts
-* `configs` - Configuration files: yaml, json, toml, and etc.
-* `tests` - Unit tests
-* `docs` - Documentation
-* `notebooks` - Jupyter notebooks for data exploration and visualisation
+### Directories
+
+* `data`: Data, including datasets for training and saved models. In most cases, the content of this directory should not be tracked by Git, except for small metadata files, like `.dvc` files, produced by [DVC](https://dvc.org/doc).
+* `src`: The project source code.
+* `scripts`: Small standalone scripts and utils. This directory can also contain entry point scripts, such as code to start training a model.
+* `configs`: Configuration files: YAML, JSON, TOML, and etc.
+* `tests`: Various test files, such as unit tests for `pytest`.
+* `docs`: Detailed documentation of the project, for example, as a collection of `.md` files with relevant images.
+* `notebooks`: Jupyter notebooks for data exploration and visualisation.
+
+### Files
+
+* `README.md`: The main readme file for the project, providing a high-level overview of its purpose, functionality and how to get started.
+* `Makefile`: A makefile for automating environment build and run processes. It may contain additional targets, like running tests, or generating documentation.
+* `Dockerfile`: Defines the project environment.
+* `requirements.txt`: A text file listing required Python packages with versions.
+* `.dockerignore`: A file specifying files and directories to exclude when building a Docker image.
+* `pyproject.toml`: The project configuration file defines metadata and other project-specific configurations.
+* `.gitignore`: A file listing files and directories that Git should not track.
+* `.pre-commit-config.yaml`: Configuration file for the pre-commit.
 
 ## Environment setup
 
@@ -43,7 +56,7 @@ make run
 ```
 
 The container has the project root directory mounted to `/workdir`,
-so all the local files can be accessed in the folder from within the container. Files saved
+so all the local files can be accessed in the directory from within the container. Files saved
 inside `/workdir` will be saved in the project root directory of the host machine.
 
 It is a good practice to develop inside the container with one's favorite IDE
@@ -59,7 +72,7 @@ In order to provide environment variables, such as secrets, it is a common pract
 
 ### X11 support
 
-In order to run the code in a container with X11 support, for example, to enable interactive visualisation, the docker run command in the Makefile should include the following lines:
+In order to run the code in a container with X11 support, for example, to enable interactive visualisation, the Docker run command in the Makefile should include the following lines:
 
 ```
         -v /tmp/.X11-unix:/tmp/.X11-unix \
@@ -82,8 +95,7 @@ pre-commit install-hooks
 
 The pre-commit hooks are defined in [.pre-commit-config.yaml](.pre-commit-config.yaml) and configured in [pyproject.toml](pyproject.toml). Feel free to customize them as needed.
 
-The defualt provided hooks include isort for sorting imports and Ruff for linting. If preferred, other hooks can be installed. If desired, [Ruff Formatter](https://docs.astral.sh/ruff/formatter/) can be enabled by uncommeting the corresponding block in the `.pre-commit-config.yaml` file.
-
+The default provided hooks include isort for sorting imports and Ruff for linting. If preferred, other hooks can be installed. If desired, [Ruff Formatter](https://docs.astral.sh/ruff/formatter/) can be enabled by uncommeting the corresponding block in the `.pre-commit-config.yaml` file.
 
 ## Links
 
