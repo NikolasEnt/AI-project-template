@@ -55,6 +55,6 @@ Good quality and uniform code style enhances code readability and maintainabilit
 
 * The experiment logging system can also be used to store models and artifacts, as well as to automate experiments.
 
-* It is a good practice to have a git commit for each experiment with corresponding experiment name tag. This approach, together with logging of the configuration files, used for experiments, helps with reproducibility and transparancy of oxperimentation, which, in result, allows achiving better models faster.
+* It is a good practice to have a git commit for each experiment with corresponding experiment name tag. This approach, together with logging of the configuration files, used for experiments, helps with reproducibility and transparency of experimentation, which, in result, allows achieving better models faster.
 
 * It is a good practice to use [Hydra](https://hydra.cc/docs/intro/) to configure experiments. This allows easy integration with [Optuna](https://optuna.readthedocs.io/en/stable/index.html) for hyperparameter optimization.

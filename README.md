@@ -42,7 +42,7 @@ The provided Docker environment is a basic Python 3.11 image, but it can be
 configured by editing [Dockerfile](Dockerfile) to include any additional Linux
 packages required for the project. Alternatively, one can use different base
 Docker images, for example [nvidia/cuda](https://hub.docker.com/r/nvidia/cuda/#!).
-Configure [requirements.txt](requirements.txt) to include any additional python
+Configure [requirements.txt](requirements.txt) to include any additional Python
 packages.
 
 To build the environment, run in the project home directory:
@@ -68,7 +68,7 @@ to suit one's needs, including security features.
 
 ### Environment variables
 
-In order to provide environment variables, such as secrets, it is a common practice to define them in the `.env` file and adding the file to the Docker run command in a Makefile with `--env-file=.env`. A sample structure of the `.env` file can be provided in the `.env.sample` file to make it easier for the user to fill with required values.
+In order to provide environment variables, such as secrets, it is a common practice to define them in the `.env` file and adding the file to the Docker run command in the Makefile with `--env-file=.env`. A sample structure of the `.env` file can be provided in the `.env.sample` file to make it easier for the user to fill with required values.
 
 ### X11 support
 
@@ -84,7 +84,7 @@ This allows use of the Linux host X11 server to access the display. Note that ot
 
 ## Pre-commit hooks
 
-The project provides some basic pre-commit hooks, helping with code linting before committing. It is just a helper, but even without this feature, it is important to ensure that the final code is formatted correctly, follows PEP8, and adheres to the development [Style Guide](GUIDE.md).
+The project provides some basic pre-commit hooks, helping with code linting before committing. This is just an aid, although it's important to ensure that the final code is formatted correctly, follows PEP8, and adheres to the development [Style Guide](GUIDE.md).
 
 To install pre-commit hooks, run in the project home directory:
 ```bash
