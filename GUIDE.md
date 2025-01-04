@@ -1,17 +1,18 @@
 # Development Style Guide
 
-The document describes basic the basic principles and style guidelines to be followed during the development of ML-related projects.
+The document describes the basic principles and style guidelines to be followed in the development of ML-related projects.
 
 ## General development
 
 * The choice of development tools is largely a matter of personal preference. Recommended IDEs are: VS Code, PyCharm and Vim.
 
-* As many things as possible should be automated, including code and comments formatting. The template provides [pre-commit hooks](README.md#pre-commit-hooks) to automate some tasks on the developer side. In addition, it is good to have CI automation in place to run linters and tests.
+* As many things as possible should be automated, including code and comments formatting. The template provides [pre-commit hooks](README.md#pre-commit-hooks) to automate some tasks on the developer side. In addition, implementing CI automation to run linters and tests is highly recommended..
 
 * A new feature is considered implemented if it is documented and tested (it is good to cover the feature with autotests).
 
 * Passwords, private access tokens, and similar secrets should never appear in the code directly. It is a common practice to define required parameters via environment variables (via `.env` [files](README.md#environment-variables)).
 
+* It is very useful when inline documentation and comments explain 'why' certain decisions were made, not only 'what' is being done.
 
 ## Python
 
@@ -37,15 +38,19 @@ Good quality and uniform code style enhances code readability and maintainabilit
 
 ## Git
 
-* Use a simplified [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow): the `develop` branch can be named `dev`. When working collaboratively, implement individual features or experiment series in separate feature branches. If these feature branches prove successful the feature developer merges them into `dev`. Update the `master` branch wisely to provide tested and reliable production-ready code. In many cases, a merge or commit to master effectively marks a new version release.
+* Use a simplified [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow): the `develop` branch can be named `dev`. When working collaboratively, implement individual features or experiment series in separate feature branches. If these feature branches prove successful the feature developer merges them into `dev`. Update the `master` branch wisely to provide tested and reliable production-ready code only. In many cases, a merge or commit to master effectively marks a new version release.
 
 * Each commit must be accompanied by a meaningful commit message following the Udacity commit message [styleguide](http://udacity.github.io/git-styleguide/).
 
 * Pull requests (PRs) and code reviews are highly recommended as part of a collaborative process, although they are not strictly mandatory. The primary objective of PRs is to leverage the collective expertise of the team by providing a second set of eyes on the code, which can proactively identify potential issues. Furthermore, PRs serve as a mechanism for sharing updates, particularly when multiple developers are expected to use or collaborate on it.
 
+* It is the responsibility of the PR author to resolve merge conflicts before merging.
+
 * Each logically complete code update should represent a separate commit, even if the change is a fix for a bug that required editing of one character.
 
 * Data and artifacts (model's weights, datasets, etc.) should be stored separately (for example, in an object storage). Committed Jupyter notebooks should not contain cell outputs, especially images.
+
+* Consider adding continuous integration (CI) systems that automatically run tests and linters on PRs, such as GitHub Actions.
 
 ## ML Experiments and data management
 
