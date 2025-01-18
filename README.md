@@ -59,7 +59,7 @@ The container has the project root directory mounted to `/workdir`,
 so all the local files can be accessed in the directory from within the container. Files saved
 inside `/workdir` will be saved in the project root directory of the host machine.
 
-It is a good practice to develop inside the container with one's favorite IDE
+It is a good practice to develop inside the container using one's favorite IDE
 (e.g., VS Code or PyCharm) and execute the code from within the container.
 
 Note: the template is meant to be used as a development environment and for
@@ -99,6 +99,6 @@ The default provided hooks include isort for sorting imports and Ruff for lintin
 
 ## Links
 
-The template is the result of years' experience within various development and research teams, as well as the result of inspiration from multiple successful ML competition projects, such as:
+The template is the result of years of experience within various development and research teams, as well as the result of inspiration from multiple successful ML competition projects, such as:
 * [1st place solution for SoccerNet Camera Calibration Challenge at CVPR 2023](https://github.com/NikolasEnt/soccernet-calibration-sportlight)
 * [1st place solution for SoccerNet Ball Action Spotting Challenge at CVPR 2023](https://github.com/lRomul/ball-action-spotting)

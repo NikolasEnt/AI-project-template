@@ -8,7 +8,7 @@ The document describes the basic principles and style guidelines to be followed 
 
 * As many things as possible should be automated, including code and comments formatting. The template provides [pre-commit hooks](README.md#pre-commit-hooks) to automate some tasks on the developer side. In addition, implementing CI automation to run linters and tests is highly recommended.
 
-* A new feature is considered implemented if it is documented and tested (it is good to cover the feature with autotests).
+* A new feature is considered implemented if it is documented and tested; covering the feature with automated tests is also recommended as part of the feature development phase.
 
 * Passwords, private access tokens, and similar secrets should never appear in the code directly. It is a common practice to define required parameters via environment variables (via `.env` [files](README.md#environment-variables)).
 
@@ -62,6 +62,6 @@ Good quality and uniform code style enhances code readability and maintainabilit
 
 * An experiment logging system can also facilitate the storage of models and artifacts, as well as automating experiments.
 
-* It is a good practice to have a git commit for each experiment with corresponding experiment name tag. This approach, together with logging of the configuration files, used for experiments, helps with reproducibility and transparency of experimentation, which, in result, allows achieving better models faster.
+* It is a good practice to have a git commit for each experiment with corresponding experiment name tag. This approach, together with logging of the configuration files, used for experiments, helps with reproducibility and transparency of experimentation, which, as a result, allows achieving better models faster.
 
 * It is also recommended to use [Hydra](https://hydra.cc/docs/intro/) to configure experiments and manage `.yaml` configs in general. This also allows easy integration with [Optuna](https://optuna.readthedocs.io/en/stable/index.html) for hyperparameter optimisation.
