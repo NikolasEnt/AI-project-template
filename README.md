@@ -68,7 +68,7 @@ to suit one's needs, including security features.
 
 ### Environment variables
 
-In order to provide environment variables, such as secrets, it is a common practice to define them in the `.env` file and adding the file to the Docker run command in the Makefile with `--env-file=.env`. A sample structure of the `.env` file can be provided in the `.env.sample` file to make it easier for the user to fill with required values.
+In order to provide environment variables, such as secrets, it is a common practice to define them in the `.env` file and add the file to the Docker run command in the Makefile with `--env-file=.env`. A sample structure of the `.env` file can be provided in the `.env.sample` file to make it easier for the user to fill with required values.
 
 ### X11 support
 
@@ -95,7 +95,7 @@ pre-commit install-hooks
 
 The pre-commit hooks are defined in [.pre-commit-config.yaml](.pre-commit-config.yaml) and configured in [pyproject.toml](pyproject.toml). Feel free to customize them as needed.
 
-The default provided hooks include isort for sorting imports and Ruff for linting. If preferred, other hooks can be installed. If desired, [Ruff Formatter](https://docs.astral.sh/ruff/formatter/) can be enabled by uncommeting the corresponding block in the `.pre-commit-config.yaml` file.
+The default provided hooks include isort for sorting imports and Ruff for linting. If preferred, other hooks can be installed. If desired, [Ruff Formatter](https://docs.astral.sh/ruff/formatter/) can be enabled by uncommenting the corresponding block in the `.pre-commit-config.yaml` file.
 
 ## Links
 
