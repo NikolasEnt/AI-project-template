@@ -97,6 +97,14 @@ The pre-commit hooks are defined in [.pre-commit-config.yaml](.pre-commit-config
 
 The default provided hooks include isort for sorting imports and Ruff for linting. If preferred, other hooks can be installed. If desired, [Ruff Formatter](https://docs.astral.sh/ruff/formatter/) can be enabled by uncommenting the corresponding block in the `.pre-commit-config.yaml` file.
 
+The installed pre-commits can be updated with:
+
+```bash
+pre-commit autoupdate
+```
+
+The command will update `.pre-commit-config.yaml` file, so it needs to be commited to git.
+
 ## Links
 
 The template is the result of years of experience within various development and research teams, as well as the result of inspiration from multiple successful ML competition projects, such as:
