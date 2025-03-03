@@ -2,8 +2,8 @@ numpy==2.2.3
 pandas==2.2.3
 scipy==1.15.2
 scikit-learn==1.6.1
-matplotlib==3.10.0
+matplotlib==3.10.1
 notebook==7.3.2
 # Dev tools
 mypy==1.15.0
-pytest==8.3.4
+pytest==8.3.5
