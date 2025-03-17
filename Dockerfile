@@ -1,4 +1,4 @@
-FROM python:3.11.11-bullseye
+FROM python:3.11.11-bookworm
 
 ENV LANG C.UTF-8
 ENV DEBIAN_FRONTEND noninteractive

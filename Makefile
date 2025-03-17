@@ -1,6 +1,6 @@
 # TODO: Rename it to your project
 PROJECT_NAME=my-python-project
-VERSION=0.0.1
+VERSION=0.0.2
 
 IMAGE_NAME=$(PROJECT_NAME):$(VERSION)
 CONTAINER_NAME=--name=$(PROJECT_NAME)
