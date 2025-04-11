@@ -32,39 +32,43 @@ The template includes:
 * `.gitignore`: A file listing files and directories that Git should not track.
 * `.pre-commit-config.yaml`: Configuration file for the pre-commit.
 
-## Environment setup
+## Environment Setup
 
-The project uses [Docker](https://docs.docker.com/) to provide a reproducible environment for running
-the code. The environment is controlled by [Makefile](Makefile), which can be customized
-for the project needs.
+### Prerequisites
+A Linux host with Docker installed ([Docker Installation Guide](https://docs.docker.com/engine/install/)) and `make` (typically pre-installed in most distributions).
 
-The provided Docker environment is a basic Python 3.11 image, but it can be
-configured by editing [Dockerfile](Dockerfile) to include any additional Linux
-packages required for the project. Alternatively, one can use different base
-Docker images, for example [nvidia/cuda](https://hub.docker.com/r/nvidia/cuda/#!).
-Configure [requirements.txt](requirements.txt) to include any additional Python
-packages.
+### Setup and Running
 
-To build the environment, run in the project home directory:
-```bash
-make build
-```
+This project utilizes Docker to ensure a reproducible development environment.
+The setup is managed through a `Makefile`, which can be customized according to
+the specific needs of your project.
 
-Once the image is built, start the container with:
-```bash
-make run
-```
+The provided Docker environment is based on Python 3.13, but you can modify this
+by editing the `Dockerfile` to include any necessary Linux packages or change
+the base image (e.g., using [nvidia/cuda](https://hub.docker.com/r/nvidia/cuda/) for Nvidia GPU acceleration).
 
-The container has the project root directory mounted to `/workdir`,
-so all the local files can be accessed in the directory from within the container. Files saved
-inside `/workdir` will be saved in the project root directory of the host machine.
+To add additional Python dependencies, update the `requirements.txt`.
 
-It is a good practice to develop inside the container using one's favorite IDE
-(e.g., VS Code or PyCharm) and execute the code from within the container.
+#### Building and Running
 
-Note: the template is meant to be used as a development environment and for
-running the code in experimental setups. Production scenarios may require further modifications
-to suit one's needs, including security features.
+1. Build the Docker environment:
+    ```bash
+    make build
+    ```
+
+2. Start the container:
+    ```bash
+    make run
+    ```
+
+The project root directory is mounted to `/workdir` within the container. Any files created
+or modified in `/workdir` will be synchronized with your local filesystem.
+
+It's recommended to use an IDE (e.g., Vim, VS Code, PyCharm) for development while executing commands inside the Docker container.
+
+**Note**: This teplate is designed primarily for development and experimental purposes.
+For production scenarios, further customization may be required to meet specific
+security and operational needs.
 
 ### Environment variables
 
