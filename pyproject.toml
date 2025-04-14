@@ -2,7 +2,7 @@
 line-length = 79
 src = ["src", "scripts"]
 extend-exclude = ["data/"]
-target-version = "py311"
+target-version = "py313"
 
 [tool.ruff.lint]
 select = [
