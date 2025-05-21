@@ -8,6 +8,8 @@ The document describes the basic principles and style guidelines to be followed 
 
 * As many things as possible should be automated, including code and comments formatting. The template provides [pre-commit hooks](README.md#pre-commit-hooks) to automate some tasks on the developer side. In addition, implementing CI automation to run linters and tests is highly recommended.
 
+* Docker should be used as a containerization tool to ensure consistent environments across development, testing, and production.
+
 * A new feature is considered implemented if it is documented and tested; covering the feature with automated tests is also recommended as part of the feature development phase.
 
 * Passwords, private access tokens, and similar secrets should never appear in the code directly. It is a common practice to define required parameters via environment variables (via `.env` [files](README.md#environment-variables)).
@@ -26,7 +28,7 @@ Good quality and uniform code style enhances code readability and maintainabilit
 
 * Linters like  [ruff](https://docs.astral.sh/ruff/) and [mypy](https://pypi.org/project/mypy/) are helpful tools to improve code quality – use them if possible. The template is [configured](README.md#pre-commit-hooks) to use ruff.
 
-* It is a standard practice to use Python [type hints](https://docs.python.org/3/library/typing.html). It makes debugging easier and helps to spot some potential problems automatically.
+* It is a standard practice to use Python [type hints](https://docs.python.org/3/library/typing.html). It makes debugging easier and helps to spot some potential problems automatically. It is recommended to use [Pydantic](https://docs.pydantic.dev) to validate configuration files and data models at runtime using type annotations.
 
 * Avoid using 'magic' numbers or strings; instead, define named constants, use configuration files and environment variables.
 
@@ -64,4 +66,4 @@ Good quality and uniform code style enhances code readability and maintainabilit
 
 * It is a good practice to have a git commit for each experiment with corresponding experiment name tag. This approach, together with logging of the configuration files, used for experiments, helps with reproducibility and transparency of experimentation, which, as a result, allows achieving better models faster.
 
-* It is also recommended to use [Hydra](https://hydra.cc/docs/intro/) to configure experiments and manage `.yaml` configs in general. This also allows easy integration with [Optuna](https://optuna.readthedocs.io/en/stable/index.html) for hyperparameter optimisation.
+* It is also recommended to use [Hydra](https://hydra.cc/docs/intro/) to configure experiments and manage `.yaml` configs in general. Hydra + OmegaConf allows for Nested Config Structures. This also allows easy integration with [Optuna](https://optuna.readthedocs.io/en/stable/index.html) for hyperparameter optimisation.
