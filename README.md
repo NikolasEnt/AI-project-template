@@ -35,7 +35,7 @@ The template includes:
 ## Environment Setup
 
 ### Prerequisites
-A Linux host with Docker installed ([Docker Installation Guide](https://docs.docker.com/engine/install/)) and `make` (typically pre-installed in most distributions).
+A Linux host with Docker installed ([Docker Installation Guide](https://docs.docker.com/engine/install/)) and `make` (typically pre-installed in most distributions).[Nvidia Container Toolkit](https://github.com/NVIDIA/nvidia-container-toolkit) should be installed as well if Nvidia GPU acceleration is required.
 
 ### Setup and Running
 
@@ -69,6 +69,15 @@ It's recommended to use an IDE (e.g., Vim, VS Code, PyCharm) for development whi
 **Note**: This teplate is designed primarily for development and experimental purposes.
 For production scenarios, further customization may be required to meet specific
 security and operational needs.
+
+## GPU Support
+
+This project template includes GPU support for deep learning workloads. The Docker environment is configured to utilize NVIDIA GPUs when available. Make sure [Nvidia Container Toolkit](https://github.com/NVIDIA/nvidia-container-toolkit) is installed before starting a container with GPU support.
+
+**GPU Configuration:**
+- By default, the container will use all available GPUs
+- To specify a particular GPU, use, e.g., `make run GPUS='"device=1"'`
+- To disable GPU access, use: `make run GPUS=none`
 
 ### Environment variables
 
