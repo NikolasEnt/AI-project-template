@@ -83,6 +83,22 @@ This project template includes GPU support for deep learning workloads. The Dock
 
 In order to provide environment variables, such as secrets, it is a common practice to define them in the `.env` file and add the file to the Docker run command in the Makefile with `--env-file=.env`. A sample structure of the `.env` file can be provided in the `.env.sample` file to make it easier for the user to fill with required values.
 
+### Project Customization
+
+Before using this template:
+
+1. **Update project metadata** in the `Makefile`:
+   - Change `PROJECT_NAME` from `my-python-project` to your project name.
+   - Update `VERSION` as needed.
+
+2. **Customize the Docker environment**:
+   - Consider using CUDA-enabled base images for GPU support.
+   - Modify `Dockerfile` to include deep learning frameworks (PyTorch, TensorFlow, etc.)
+   - Add any additional system dependencies required for your project.
+
+3. **Update Python dependencies**:
+   - Add your deep learning and data science packages to `requirements.txt`.
+
 ### X11 support
 
 In order to run the code in a container with X11 support, for example, to enable interactive visualisation, the Docker run command in the Makefile should include the following lines:
