@@ -66,7 +66,7 @@ or modified in `/workdir` will be synchronized with your local filesystem.
 
 It's recommended to use an IDE (e.g., Vim, VS Code, PyCharm) for development while executing commands inside the Docker container.
 
-**Note**: This teplate is designed primarily for development and experimental purposes.
+**Note**: This template is designed primarily for development and experimental purposes.
 For production scenarios, further customization may be required to meet specific
 security and operational needs.
 
@@ -132,7 +132,7 @@ The installed pre-commits can be updated with:
 pre-commit autoupdate
 ```
 
-The command will update `.pre-commit-config.yaml` file, so it needs to be commited to git.
+The command will update `.pre-commit-config.yaml` file, so it needs to be committed to git.
 
 ## Links
 
