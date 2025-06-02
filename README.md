@@ -23,7 +23,7 @@ The template includes:
 
 ### Files
 
-* `README.md`: The main readme file for the project, providing a high-level overview of its purpose, functionality and how to get started.
+* `README.md`: The main readme file for the project, providing a high-level overview of its purpose, functionality, and how to get started.
 * `Makefile`: A makefile for automating environment build and run processes. It may contain additional targets, like running tests, or generating documentation.
 * `Dockerfile`: Defines the project environment.
 * `requirements.txt`: A text file listing required Python packages with versions.
