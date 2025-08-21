@@ -6,17 +6,17 @@ target-version = "py313"
 
 [tool.ruff.lint]
 select = [
-    "E",  # pycodestyle error
-    "W",  # pycodestyle warnings
-    "F",  # Pyflakes
-    "B",  # flake8-bugbear
-    "D",  # pydocstyle
-    "N",  # pep8-naming
-    ]
+  "E",  # pycodestyle error
+  "W",  # pycodestyle warnings
+  "F",  # Pyflakes
+  "B",  # flake8-bugbear
+  "D",  # pydocstyle
+  "N",  # pep8-naming
+]
 ignore = [
-    "D10",  # D10?: Missing docstring
-    "I001"  # Imports are sorted by isort
-    ]
+  "D10",  # D10?: Missing docstring
+  "I001"  # Imports are sorted by isort
+]
 unfixable = ["B"]
 
 [tool.ruff.lint.per-file-ignores]
