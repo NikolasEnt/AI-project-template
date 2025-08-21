@@ -42,7 +42,9 @@ Good quality and uniform code style enhances code readability and maintainabilit
 
 * Imports sorting could be done automatically with [isort](https://pypi.org/project/isort/) using the following parameters: `--atomic -l=79 -m=HANGING_INDENT --ls`. The template is [configured](README.md#pre-commit-hooks) to use isort as a pre-commit hook.
 
-* Use four whitespace characters for indentation in Python code. Two whitespace characters can be used for indentation in YAML and JSON files.
+* Use four whitespace characters for indentation in Python code. For config files, like YAML and JSON files, two spaces may be used for indentation.
+
+* Prefer double quotes for strings. For multiline strings, use triple double quotes.
 
 ## Git
 
