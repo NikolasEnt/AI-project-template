@@ -10,7 +10,7 @@ The document describes the basic principles and style guidelines to be followed 
 
 * Docker should be used as a containerization tool to ensure consistent environments across development, testing, and production.
 
-* A new feature is considered implemented, if it is documented and tested; covering the feature with automated tests is also recommended as part of the feature development phase.
+* A new feature is considered implemented only if it is documented and tested; covering the feature with automated tests is also recommended as part of the feature development phase.
 
 * Every project repo should include a `README.md` file providing a brief project overview, setup instructions, and usage examples. It should also outline the project structure, and may include links to additional documentation (e.g., detailed technical guides or business use documentation). Regular updates to `README.md` are essential to ensure it reflects the current state of the project.
 
@@ -21,6 +21,8 @@ The document describes the basic principles and style guidelines to be followed 
 * Use meaningful variable and function names that clearly express their purpose. Avoid abbreviations that might be unclear to other developers.
 
 * Keep functions small and focused. A good rule of thumb, is that functions should fit on a single screen without scrolling.
+
+* Use [Markdown](https://daringfireball.net/projects/markdown/) for READMEs and documentation files. The main readme file should be named `README.md` and placed in the root directory of the project.
 
 ## Python
 
@@ -76,10 +78,12 @@ Good quality and uniform code style enhances code readability and maintainabilit
 
 * All data, used for ML training, as well as the code, should be backed up. A good approach is to use [DVC](https://dvc.org/doc) for data version control and management within a Git repository.
 
-* Significant ML/DL experiments should be logged in a "Lab journal" or an experiment logging system, such as [MLflow](https://mlflow.org/docs/latest/index.html) or [ClearML](https://clear.ml/docs/latest/docs/). A description of an experiment should include all information required to reproduce the experiment, including: the relevant Git commit reference, data used, parameters of the training process and data transforms, evaluation metrics results. It is also crucial to include research goals and hypotheses for an experiment (e.g., "Try colour augmentation to deal with overfitting"), as well as results/conclusions (e.g., "It does not work!") and ideas on future work. This helps to reflect on the experiment and decide on the next steps more thoughtfully.
+* Significant ML/DL experiments should be logged in a "Lab journal" or an experiment logging system, such as [MLflow](https://mlflow.org/docs/latest/index.html) or [ClearML](https://clear.ml/docs/latest/docs/). A description of an experiment should include all information required to reproduce the experiment, including: the relevant git commit reference, data used, parameters of the training process and data transforms, evaluation metrics results. It is also crucial to include research goals and hypotheses for an experiment (e.g., "Try colour augmentation to deal with overfitting"), as well as results/conclusions (e.g., "It does not work!") and ideas on future work. This helps to reflect on the experiment and decide on the next steps more thoughtfully.
 
 * An experiment logging system can also facilitate the storage of models and artifacts, as well as experiment automation.
 
-* It is a good practice to have a git commit for each experiment with corresponding experiment name tag. This approach, together with logging of the configuration files, used for experiments, helps with reproducibility and transparency of experimentation, which, as a result, allows achieving better models faster.
+* It is a good practice to have a git commit for each experiment with corresponding experiment name as a tag. This approach, combined with logging configuration files for experiments, helps with reproducibility and transparency of experimentation, which, as a result, allows achieving better models faster.
 
 * It is also recommended to use [Hydra](https://hydra.cc/docs/intro/) to configure experiments and manage `.yaml` configs in general. Hydra + OmegaConf allows for Nested Config Structures. This also allows easy integration with [Optuna](https://optuna.readthedocs.io/en/stable/index.html) for hyperparameter optimisation.
+
+* Treat configuration files as artifacts (like model's binary files) rather than code and plan their delivery accordingly. Using configuration management solutions like Hydra enables scalable and customizable configuration management, particularly useful for deployment scenarios.
