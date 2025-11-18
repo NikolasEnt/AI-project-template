@@ -46,6 +46,8 @@ Good quality and uniform code style enhances code readability and maintainabilit
 
 * Prefer double quotes for strings. For multiline strings, use triple double quotes.
 
+* While discouraged, if required, comments in Python may include tags like `TODO:` or `FIXME:`. Example: `# TODO: Implement data validation`.
+
 ## Git
 
 * Use a simplified [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow). The `develop` branch can be named `dev`. When working collaboratively, implement individual features or series of experiments in separate feature branches. If these feature branches prove successful the feature developer merges them into `dev`. Update the `master` branch wisely to provide tested and reliable production-ready code only. In many cases, a merge or commit to master effectively marks a new version release.
