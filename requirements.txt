@@ -6,4 +6,4 @@ matplotlib==3.10.7
 notebook==7.5.0
 # Dev tools
 mypy==1.19.0
-pytest==9.0.1
+pytest==9.0.2
