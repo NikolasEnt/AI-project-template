@@ -25,12 +25,26 @@ all: build stop run logs
 build:
 	docker build $(BUILD_NET) -t $(IMAGE_NAME) -f Dockerfile .
 
+
+CONTAINER_FILTER := "name=$(PROJECT_NAME)*"
+
 stop:
-	docker stop $(shell docker container ls -q --filter name=$(PROJECT_NAME)*)
+	@ids=$$(docker ps -q --filter $(CONTAINER_FILTER)); \
+	if [ -n "$$ids" ]; then \
+		echo "Stopping containers of $(PROJECT_NAME): $$ids"; \
+		docker stop $$ids; \
+	else \
+		echo "No running containers found to stop."; \
+	fi
 
 kill:
-	docker kill $(shell docker container ls -q --filter name=$(PROJECT_NAME)*)
-	docker rm $(shell docker container ls -q --filter name=$(PROJECT_NAME)*)
+	@ids=$$(docker ps -aq --filter $(CONTAINER_FILTER)); \
+	if [ -n "$$ids" ]; then \
+		echo "Force removing containers of $(PROJECT_NAME): $$ids"; \
+		docker rm -f $$ids; \
+	else \
+		echo "No containers found to remove."; \
+	fi
 
 run:
 	docker run --rm -it $(GPUS_OPTION) \
