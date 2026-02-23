@@ -1,4 +1,4 @@
-FROM python:3.13.7-slim-trixie
+FROM python:3.13.12-slim-trixie
 
 ENV LANG=C.UTF-8
 ENV DEBIAN_FRONTEN=noninteractive
