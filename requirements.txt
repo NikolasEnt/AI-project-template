@@ -3,7 +3,7 @@ pandas==3.0.3
 scipy==1.17.1
 scikit-learn==1.9.0
 matplotlib==3.10.9
-notebook==7.5.6
+notebook==7.5.7
 # Dev tools
 mypy==2.1.0
 pytest==9.0.3
