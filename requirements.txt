@@ -5,5 +5,5 @@ scikit-learn==1.9.0
 matplotlib==3.11.0
 notebook==7.6.0
 # Dev tools
-mypy==2.2.0
+mypy==2.3.0
 pytest==9.1.1
